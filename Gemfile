@@ -19,6 +19,13 @@ gem 'bourbon'
 gem 'neat'
 gem 'refills'
 
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'omniauth-linkedin'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
