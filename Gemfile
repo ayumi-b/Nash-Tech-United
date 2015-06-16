@@ -14,6 +14,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'simple_form'
 
+gem 'bitters'
+gem 'bourbon'
+gem 'neat'
+gem 'refills'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
