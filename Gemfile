@@ -14,9 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'simple_form'
 
-gem 'bitters'
-gem 'bourbon'
 gem 'neat'
+gem 'bitters'
 gem 'refills'
 
 
