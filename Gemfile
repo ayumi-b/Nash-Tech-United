@@ -13,9 +13,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'simple_form'
-
-gem 'bitters'
 gem 'bourbon'
+gem 'bitters'
+
 gem 'neat'
 gem 'refills'
 
