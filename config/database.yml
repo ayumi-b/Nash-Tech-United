@@ -76,10 +76,7 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
+#     url: <%= ENV['DATABASE_URL'] %production:
   <<: *default
   database: Nash-Tech-United_production
-  username: Nash-Tech-United
-  password: <%= ENV['NASH-TECH-UNITED_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

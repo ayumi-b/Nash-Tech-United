@@ -61,12 +61,16 @@ group :development, :test do
   gem 'spring'
 end
 
-  group :test do
+group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers'
 end
 
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end
 
 
