@@ -4,11 +4,13 @@
       %img{:alt => "Logo Image", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png\r\n"}/
     .hero-copy
       %h1 WE ARE #NASHTECHUNITED.
-      %p Will you join up and take the pledge?
+      -#- if !logged_in?
+        -#%p= Will you join up and take the pledge?
+      -#- else 
+      -#%p Hello, "#{user.name}"!
 
 = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
 = link_to "Signout", destroy_user_session_path, method: :delete
-
 %h1{style:'text-align:center;'} What does it mean to be 'NashTechUnited'?
 
 .cards
@@ -33,3 +35,12 @@
       United
     .card-copy
       %p It's up to each of us to treat people right.
+
+.flex-boxes
+  %a.flex-box{:href => "javascript:void(0)"}
+    %img{:alt => "", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"}/
+    %h1.flex-title What Can You Do?
+    %h1.flex-title Take a personal 'code of conduct' pledge!
+    %p Lorem ipsum dolor sit amet, elit. Rem, illum.
+    = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
+
