@@ -12,7 +12,7 @@
 = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
 = link_to "Signout", destroy_user_session_path, method: :delete
 %h1{style:'text-align:center;'} What does it mean to be 'NashTechUnited'?
-
+= link_to "Code of Conduct Resources", static_pages_code_path, method: :get
 .cards
   .card
     .card-image
@@ -43,4 +43,4 @@
     %h1.flex-title Take a personal 'code of conduct' pledge!
     %p Lorem ipsum dolor sit amet, elit. Rem, illum.
     = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
-
+= render 'layouts/footer'
