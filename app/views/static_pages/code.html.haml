@@ -1,2 +1,29 @@
-%h1 StaticPages#code
-%p Find me in app/views/static_pages/code.html.haml
+.hero
+  .hero-inner
+    %a.hero-logo{:href => ""}
+      %img{:alt => "Logo Image", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png\r\n"}/
+    .hero-copy
+      %h1 CODE OF CONDUCT
+      %p A few reasons why this product is worth using, who it's for and why they need it.
+
+
+.scroll-on-page
+  %aside#scroll-on-page-top
+    %a.scroll-on-page-link{:href => "#scroll-link-1"} What's in 'The Code'?
+    %a.scroll-on-page-link{:href => "#scroll-link-2"} Meetups With The Code
+    %a.scroll-on-page-link{:href => "#scroll-link-3"} Need Help Building Yours?
+  %article
+    %section
+      %h4#scroll-link-1 'The CODE'
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt?
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt?
+    %section
+      %h4#scroll-link-2 Examples
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt?
+    %section
+      %h4#scroll-link-3 Resources to Get Your Org Started!
+      %p lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquid necessitatibus, repudiandae veniam labore, consequatur maiores dolore unde non deleniti, aliquam minima ex nulla error eveniet vel tempore, in incidunt?
+      %a.scroll-on-page-link{:href => "#scroll-on-page-top"} Back to top
+
+
+= render 'layouts/footer'
