@@ -1,7 +1,7 @@
 class ActionsController < ApplicationController
 
   def new
-    @user = User.new
+    @user = User.find(params[:user])
   end
 
   def create

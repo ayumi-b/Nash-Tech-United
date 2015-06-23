@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'static_pages/about'
+
+  get 'static_pages/code'
+
   devise_for :users, class_name: 'FormUser', :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   devise_scope :user do
   get '/users/auth/:provider/upgrade' => 'omniauth_callbacks#upgrade', as: :user_omniauth_upgrade
@@ -12,17 +16,25 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+   get 'conduct' => 'static_pages#code'
+   get 'about' => 'static_pages#about'
+
+   get 'users/:user_id' => 'actions#new'
 
 
      resources :users do
-       resources :actions
+       resources :actions do
+         member do
+           post :new
+           get :new
+         end
+       end
      end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

@@ -12,6 +12,6 @@ feature "User Signs Up" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "password1"
     click_button "Sign up"
-    visit new_user_action_path
+    visit new_user_action_path(:id => @user_id)
   end
 end
