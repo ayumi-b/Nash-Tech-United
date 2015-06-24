@@ -1,0 +1,28 @@
+.hero
+  .hero-inner
+    %a.hero-logo{:href => "/"}
+      %img{:alt => "Logo Image", :src => "http://www.elkfish.com/ntc/wp-content/uploads/2015/02/skyline.png\r\n"}/
+    .hero-copy
+      %h1 WHO ARE #NASHTECHUNITED?
+      %section#content
+        - flash.each do |key, message|
+          %div{ class: "flash-#{key}" }= message
+      = link_to "Home", root_path, method: :get
+
+
+.flex-boxes
+  %a.flex-box{:href => "javascript:void(0)"}
+    %img{:alt => "", :src => "http://www.nashvillechamber.com/sf-images/default-source/graphics/we_five_circles_horizontal-(2).png?sfvrsn=0"}/
+    %h1.flex-title We have all publicly pledged to be a part of #NashTechUnited!
+    %ul.user_list
+    - @users.each do |user|
+      %div Name: #{user.name}  Contact: #{user.email}
+    %h1.flex-title Take a personal 'code of conduct' pledge!
+    - if !user_signed_in?
+      = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
+    -else
+      = button_to "Welcome Back! Create An Action", new_user_action_path(current_user), method: :get
+
+
+
+= render 'layouts/footer'

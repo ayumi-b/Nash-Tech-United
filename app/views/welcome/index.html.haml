@@ -1,32 +1,27 @@
 .hero
   .hero-inner
     %a.hero-logo{:href => ""}
-      %img{:alt => "Logo Image", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png\r\n"}/
+      %img{:alt => "Logo Image", :src => "http://www.elkfish.com/ntc/wp-content/uploads/2015/02/skyline.png\r\n"}/
     .hero-copy
       %h1 WE ARE #NASHTECHUNITED.
-      -#- if !logged_in?
-        -#%p= Will you join up and take the pledge?
-      -#- else 
-      -#%p Hello, "#{user.name}"!
       %section#content
         - flash.each do |key, message|
           %div{ class: "flash-#{key}" }= message
+      = link_to "Signout", destroy_user_session_path, method: :delete
 
-= button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
-= link_to "Signout", destroy_user_session_path, method: :delete
 %h1{style:'text-align:center;'} What does it mean to be 'NashTechUnited'?
-= link_to "Code of Conduct Resources", static_pages_code_path, method: :get
 .cards
   .card
     .card-image
-      %img{:alt => "", :src => "https://pbs.twimg.com/media/CHogFKiVAAA5bHz.jpg"}/
+      %img{:href => "/static_pages/code", :src => "https://pbs.twimg.com/media/CHogFKiVAAA5bHz.jpg"}/
     .card-header
       Nashville
     .card-copy
       %p We're not in the 'Valley' or on any coast. We're the Music City, and in order to make good music, there needs to be collaboration.
+      %p <a href="/users">See Who's #NashTechUnited</a>
   .card
     .card-image
-      %img{:alt => "", :src => "https://pbs.twimg.com/media/CEAIgs_VEAAfdMO.jpg"}/
+      %img{:href => "/static", :src => "https://pbs.twimg.com/media/CEAIgs_VEAAfdMO.jpg"}/
     .card-header
       Tech
     .card-copy
@@ -38,6 +33,7 @@
       United
     .card-copy
       %p It's up to each of us to treat people right.
+      %p <a href="/static_pages/code">Code of Conduct Here</a>
 
 .flex-boxes
   %a.flex-box{:href => "javascript:void(0)"}
@@ -45,5 +41,8 @@
     %h1.flex-title What Can You Do?
     %h1.flex-title Take a personal 'code of conduct' pledge!
     %p Lorem ipsum dolor sit amet, elit. Rem, illum.
-    = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
+    - if !user_signed_in?
+      = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
+    -else
+      = button_to "Welcome Back! Create An Action", new_user_action_path(current_user), method: :get
 = render 'layouts/footer'
