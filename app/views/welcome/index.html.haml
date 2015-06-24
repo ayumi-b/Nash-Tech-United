@@ -8,6 +8,9 @@
         -#%p= Will you join up and take the pledge?
       -#- else 
       -#%p Hello, "#{user.name}"!
+      %section#content
+        - flash.each do |key, message|
+          %div{ class: "flash-#{key}" }= message
 
 = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
 = link_to "Signout", destroy_user_session_path, method: :delete
