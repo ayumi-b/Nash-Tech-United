@@ -3,11 +3,12 @@
     %a.hero-logo{:href => ""}
       %img{:alt => "Logo Image", :src => "http://www.elkfish.com/ntc/wp-content/uploads/2015/02/skyline.png\r\n"}/
     .hero-copy
-      %h1 WE ARE #NASHTECHUNITED.
+      %h1 WE ARE #NashTechUnited.
       %section#content
         - flash.each do |key, message|
           %div{ class: "flash-#{key}" }= message
-      = link_to "Signout", destroy_user_session_path, method: :delete
+        - if user_signed_in?
+          = link_to "Signout", destroy_user_session_path, method: :delete
 
 %h1{style:'text-align:center;'} What does it mean to be 'NashTechUnited'?
 .cards
@@ -15,32 +16,33 @@
     .card-image
       %img{:href => "/static_pages/code", :src => "https://pbs.twimg.com/media/CHogFKiVAAA5bHz.jpg"}/
     .card-header
-      Nashville
+      NASHVILLE
     .card-copy
-      %p We're not in the 'Valley' or on any coast. We're the Music City, and in order to make good music, there needs to be collaboration.
-      %p <a href="/users">See Who's #NashTechUnited</a>
+      %p We're not in the 'Valley' or on any coast. We're the Music City, and we know that, in order to make good music, there needs to be collaboration. And this necessity of good teamwork is also an integral part of the Nashville technology community.
+      %p Does your organization have a Code of Conduct? <a href="/static_pages/code">Learn more about creating a Code of Conduct for your organization or event!</a>
   .card
     .card-image
       %img{:href => "/static", :src => "https://pbs.twimg.com/media/CEAIgs_VEAAfdMO.jpg"}/
     .card-header
-      Tech
+      TECH
     .card-copy
       %p The spirit of innovation and creativity extends beyond music. With established industries and incoming businesses, technology is a crucial component that keeps Nashville together.  When Google wants to 'fiber' you, it's a big deal.
+      %p <a href="http://cal.nashvl.org/">See what's going on in the Nashville Tech Community!</a>
   .card
     .card-image
       %img{:alt => "", :src => "https://pbs.twimg.com/media/CEHxzHOUUAA2eIL.jpg"}/
     .card-header
-      United
+      UNITED
     .card-copy
-      %p It's up to each of us to treat people right.
-      %p <a href="/static_pages/code">Code of Conduct Here</a>
+      %p It's up to each of us to treat people right. Even if an event has a Code of Conduct in place, we are individually responsible for our own actions.  Will you be part of the Nashville Tech community that supports and encourages everyone?
+      %p <a href="/users">See Who's #NashTechUnited</a>
 
 .flex-boxes
   %a.flex-box{:href => "javascript:void(0)"}
     %img{:alt => "", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"}/
     %h1.flex-title What Can You Do?
-    %h1.flex-title Take a personal 'code of conduct' pledge!
-    %p Lorem ipsum dolor sit amet, elit. Rem, illum.
+    %h1.flex-title Take a Personal 'Code of Conduct' Pledge!
+    %p "I am a part of the Nashville Tech Community, and I value each and every member that make up this great group --- and those who will want to join in the future. I will show respect and courtesy to every community member, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, or religion. This includes every form of interaction, from online chats to large conferences. I also will not tolerate any gestures that are exclusionary toward anyone. And I pledge that I will continue to help in crafting an inclusive tech community that can only help make Nashville better."
     - if !user_signed_in?
       = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
     -else
