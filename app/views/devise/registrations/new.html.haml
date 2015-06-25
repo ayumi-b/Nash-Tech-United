@@ -1,11 +1,26 @@
-%h2 Take The Pledge, and Spread the Word!
+.hero-pledge
+  .hero-inner
+    %a.hero-logo{:href => ""}
+      %img{:alt => "Logo Image", :src => "https://s-media-cache-ak0.pinimg.com/236x/56/e6/10/56e61018f8aefc4ed65bd7f88f1a7af4.jpg\r\n"}/
+    .hero-copy
+      %h1 Take The Pledge and Spread the Word!
+
+
+
+
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :name
+    = f.input :name, required: true
     = f.input :email, required: true, autofocus: true
+    = f.input :reason, required: true, label: "Why are you #NashTechUnited?"
     = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
     = f.input :password_confirmation, required: true
+    %p By signing up, you're pledging to the following:
+    %p "I am a part of the Nashville Tech Community, and I value each and every member that make up this great group --- and those who will want to join in the future. I will show respect and courtesy to every community member, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, or religion. This includes every form of interaction, from online chats to large conferences. I also will not tolerate any gestures that are exclusionary toward anyone. And I pledge that I will continue to help in crafting an inclusive tech community that can only help make Nashville better."
+
   .form-actions
-    = f.button :submit, "Sign up"
+    = f.button :submit, "Yes, I am #NashTechUnited. Sign me up"
+    = button_to "I don't want to be a part of this.", root_path 
+
 = render "devise/shared/links"
