@@ -19,6 +19,8 @@
     %ul.user_list
     - @users.each do |user|
       %ul #{user.name} is #NashTechUnited because: #{user.reason}
+    / - @actions.each do |action|
+    /   %ul #{action.goal}
     %h1.flex-title Take a personal 'code of conduct' pledge!
     - if !user_signed_in?
       = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
