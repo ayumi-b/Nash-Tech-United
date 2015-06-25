@@ -3,7 +3,7 @@
     %a.hero-logo{:href => "/"}
       %img{:alt => "Logo Image", :src => "http://www.elkfish.com/ntc/wp-content/uploads/2015/02/skyline.png\r\n"}/
     .hero-copy
-      %h1 WHO ARE #NASHTECHUNITED?
+      %h1 WHO ARE #NashTechUnited?
       %section#content
         - flash.each do |key, message|
           %div{ class: "flash-#{key}" }= message
@@ -14,9 +14,11 @@
   %a.flex-box{:href => "javascript:void(0)"}
     %img{:alt => "", :src => "http://www.nashvillechamber.com/sf-images/default-source/graphics/we_five_circles_horizontal-(2).png?sfvrsn=0"}/
     %h1.flex-title We have all publicly pledged to be a part of #NashTechUnited!
+    %h2 Our Personal Code of Conduct Pledge:
+    %p "I am a part of the Nashville Tech Community, and I value each and every member that make up this great group --- and those who will want to join in the future. I will show respect and courtesy to every community member, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, or religion. This includes every form of interaction, from online chats to large conferences. I also will not tolerate any gestures that are exclusionary toward anyone. And I pledge that I will continue to help in crafting an inclusive tech community that can only help make Nashville better."
     %ul.user_list
     - @users.each do |user|
-      %div Name: #{user.name}  Contact: #{user.email}
+      %ul #{user.name} is #NashTechUnited because: #{user.reason}
     %h1.flex-title Take a personal 'code of conduct' pledge!
     - if !user_signed_in?
       = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
