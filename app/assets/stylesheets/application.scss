@@ -6,7 +6,11 @@
 @import "refills/*";
 
 @import "welcome";
+@import "static_pages";
+@import "users";
+
 ///*herobox///**
+
 .hero {
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
