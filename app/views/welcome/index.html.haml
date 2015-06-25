@@ -46,5 +46,5 @@
     - if !user_signed_in?
       = button_to "I'll Take the Pledge!", new_user_registration_path, method: :get
     -else
-      = button_to "Welcome Back! Create An Action", new_user_action_path(current_user), method: :get
+      = button_to "Welcome Back! Create An Action", new_user_commitment_path(current_user), method: :get
 = render 'layouts/footer'

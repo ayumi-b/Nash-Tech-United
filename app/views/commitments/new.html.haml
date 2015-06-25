@@ -1,0 +1,17 @@
+.hero-code
+  .hero-inner
+    %a.hero-logo{:href => ""}
+      %img{:alt => "Logo Image", :src => "https://s-media-cache-ak0.pinimg.com/236x/56/e6/10/56e61018f8aefc4ed65bd7f88f1a7af4.jpg\r\n"}/
+    .hero-copy
+      %h1 CREATE A GOAL TO MAKE #NashTechUnited
+      %p 
+
+
+= simple_form_for @action, url: user_commitments_path(current_user) do |f|
+  = f.input :goal, label: "What's your action plan?"
+
+  = f.button :submit, "Let's Go"
+  / - flash.each do |key, message|
+  /   %div{ class: "flash-#{key}" }= message
+
+= render 'layouts/footer'

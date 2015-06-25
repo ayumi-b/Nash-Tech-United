@@ -18,16 +18,15 @@ Rails.application.routes.draw do
    root 'welcome#index'
    get 'conduct' => 'static_pages#code'
    get 'about' => 'static_pages#about'
+   # get 'users/:user_id' => 'actions#new'
+   get '/commitments' => 'commitments#index'
 
-   get 'users/:user_id' => 'actions#new'
-
-
+   # resources :actions, only: [:new, :create, :edit, :update, :destroy, :index]
      resources :users do
-       resources :actions do
+       resources :commitments, only: [:new, :create, :edit, :update, :destroy]
          member do
            post :new
            get :new
-         end
        end
      end
   # Example of regular route:
