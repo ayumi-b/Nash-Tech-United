@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user.assign_attributes(user_params)
     if @user.save
       redirect_to user_path(@user)
-      flash.notice = "#{@user.company}'s profile has been updated."
+      flash.notice = "#{@user.name}'s profile has been updated."
     else
       flash.alert = "Please fix the errors below to continue."
       render :edit
@@ -44,5 +44,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-end  
+
 end
